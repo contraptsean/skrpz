@@ -1,0 +1,33 @@
+found this on the internet.
+
+Use [...] dataPath("") to get the path of the data directory.
+means replace File dir = new File("data"); with 
+File dir = new File(dataPath(""));
+
+
+Also:
+
+void setup(){
+ArrayList<File> filesList = filesToArrayList();
+for(File f : filesList){
+println(f.getName());
+}
+}
+ArrayList filesToArrayList() {
+ArrayList<File> filesList = new ArrayList<File>();
+String folderPath = selectFolder();
+if (folderPath != null) {
+File file = new File(folderPath);
+File[] files = file.listFiles();
+for (int i = 0; i < files.length; i++) {
+filesList.add(files[i]);
+}
+}
+return(filesList);
+}
+
+
+Another Glitch User::
+actually it's a lot easier and cleaner to write your code
+in the main Draw() and use functions to call, as well as creat
+ing a loop in there that will iterate through so you can rename your files xx_01.bmp etc..
